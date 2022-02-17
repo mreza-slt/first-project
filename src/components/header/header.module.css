@@ -1,0 +1,117 @@
+.header {
+    background: #f4f9fe;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+.section_parent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section_parent .content h1 {
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.img {
+    position: relative;
+    height: 544px;
+    width: 544px;
+    /* display: block;
+    box-sizing: inherit; */
+}
+.img .img_1 {
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    background: #fff;
+    position: absolute;
+    left: 72px;
+    top: 72px;
+    z-index: 2;
+}
+.img .img_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(180deg);
+}
+.img .img_3 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.myBtn {
+    display: none !important;
+    border-radius: 32px !important;
+    background: #387cff;
+    color: #fff;
+    width: 128px;
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .header {
+        max-width: 1280px;
+    }
+    .section_parent {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .img {
+        order: 1;
+        margin: 2rem 0;
+    }
+    .content {
+        order: 2;
+        margin: 0 !important;
+    }
+}
+@media screen and (max-width: 960px) {
+    .header {
+        background: #9fa2a6;
+        height: 77vh;
+        max-width: 960px;
+        color: #fff;
+    }
+    .section_parent {
+        width: 100%;
+        height: 90%;
+        margin: 0 1.5rem;
+        position: relative;
+    }
+    .section_parent .content h1 {
+        font-size: 1.5rem;
+        opacity: 1;
+    }
+    .section_parent h2 {
+        margin: 0.5rem 0 1.5rem 0;
+    }
+    .img {
+        display: none;
+    }
+    .myBtn {
+        display: block !important;
+    }
+    .section_parent .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .section_parent {
+        margin: 0 0.75rem;
+    }
+}

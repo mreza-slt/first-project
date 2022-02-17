@@ -1,0 +1,77 @@
+.main {
+    background: #f4f9fe;
+    margin-bottom: 4rem;
+    padding-bottom: 6rem;
+}
+
+.main .pakage_content {
+    margin: 3rem auto;
+}
+
+.main .pakage_content .content {
+    max-width: 504px;
+    padding-top: 4rem;
+    line-height: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.69;
+}
+.main .pakage_content .content h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+.main .pakage_content {
+    width: 960px;
+}
+.main .img {
+    width: 316px !important;
+    height: 321px !important;
+    cursor: pointer;
+}
+.main .img img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px;
+    position: relative;
+}
+.swiper {
+    height: 25rem !important;
+    padding: 1rem !important;
+    max-width: 910px;
+    position: relative;
+}
+.main .img span {
+    position: absolute;
+    background: #387cff;
+    color: #fff;
+    border-radius: 25px;
+    padding: 6px 15px;
+    font-size: 1rem;
+    top: 15px;
+    left: 15px;
+}
+.main .img div {
+    position: absolute;
+    color: #fff;
+    padding: 6px 15px;
+    bottom: 25px;
+    left: 6px;
+    text-align-last: left;
+}
+.main .img div h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.main .img div p {
+    font-size: 1rem;
+}
+.main .pakage_content .parent_slide {
+    position: relative;
+}
+
+.main .pakage_content .img_bg {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    transform: rotate(180deg);
+}

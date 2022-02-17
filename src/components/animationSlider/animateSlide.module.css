@@ -1,0 +1,107 @@
+.main {
+    width: 100%;
+    height: 360px;
+}
+
+.animate {
+    position: relative;
+    width: 1224px;
+    height: 100%;
+    margin: 0 0 0 auto;
+}
+
+.animate_content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1224px;
+    height: 100%;
+}
+.contentSlide {
+    flex-basis: 33.3%;
+    max-width: 33.3%;
+    height: 100%;
+    margin-top: 25px;
+    padding: 0 0.3rem;
+    background: #fff;
+    position: relative;
+}
+.contentSlide h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-bottom: 1.8rem;
+    opacity: 0.69;
+}
+.contentSlide p {
+    text-align: justify;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.8;
+    opacity: 0.69;
+}
+.imageSlider {
+    position: relative;
+    padding: 0.3rem 0 0.3rem 0.6rem;
+    flex-basis: 66.6%;
+    width: 66.6%;
+    height: 100%;
+}
+.imageSlider::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 6px 0px 15px 0px#fff;
+    z-index: 10;
+}
+
+.imageSlider div:first-child {
+    padding: 0.5rem 0;
+}
+.imageSlider img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px#e9ebec;
+    cursor: grab;
+    height: 288px;
+    width: 376px;
+}
+.imageSlider img:active {
+    cursor: grabbing;
+}
+
+@media screen and (max-width: 1280px) {
+    .animate_content {
+        padding-left: 1.5rem;
+        max-width: 1280px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .main {
+        height: 500px;
+    }
+    .animate_content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100%;
+    }
+    .imageSlider {
+        flex-basis: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    .contentSlide {
+        flex-basis: 100%;
+        width: 100%;
+        height: 100%;
+        margin-top: 25px;
+        padding: 0 0.3rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .animate_content {
+        padding: 0 0.75rem;
+    }
+}

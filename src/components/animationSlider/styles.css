@@ -1,0 +1,29 @@
+.swiper_animation .swiper-pagination {
+    width: 9rem !important;
+    position: absolute;
+    bottom: 76px !important;
+    left: -27px !important;
+}
+
+.swiper_animation span {
+    background: #000;
+    padding: 0.3rem;
+    border: 3px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+.swiper_animation span::after {
+    content: "";
+    background: transparent;
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: -12%;
+    left: -11%;
+    width: 12px;
+    height: 12px;
+}
+/* buggggggggggggggggggggggggggggggg */
+.swiper_animation .swiper-slide {
+    padding: 0 1.3rem;
+}

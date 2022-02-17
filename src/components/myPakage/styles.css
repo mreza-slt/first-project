@@ -1,0 +1,44 @@
+.my_pakage .swiper-pagination span {
+    background: #000;
+    padding: 0.3rem;
+    border: 3px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+.my_pakage .swiper-pagination span::after {
+    content: "";
+    background: transparent;
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: -12%;
+    left: -11%;
+    width: 12px;
+    height: 12px;
+}
+.my_pakage .swiper-slide::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    background: #f4f9fe;
+    opacity: 0.6;
+    border-radius: 10px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.my_pakage .swiper-slide-active {
+    box-shadow: 0px 0px 9px 9px #d5dde3;
+    border-radius: 10px;
+}
+.my_pakage .swiper-slide-active::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+}

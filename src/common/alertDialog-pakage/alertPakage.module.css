@@ -1,0 +1,74 @@
+.dialog {
+    width: 960px;
+    height: 24rem;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dialog .img {
+    flex-basis: 50%;
+    width: 50%;
+    height: 90%;
+    width: 100%;
+    height: 100%;
+    padding: 0.7rem 0 0 1rem;
+    position: relative;
+    text-align: center;
+}
+.dialog .img .img_content {
+    position: absolute;
+    display: block;
+    width: 96.5%;
+    top: 42px;
+    color: #fff;
+}
+.dialog .img .img_content div {
+    width: 9rem;
+    margin: 0 auto;
+    color: #fff;
+}
+.dialog .img div h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.dialog .img div p {
+    font-size: 0.9rem;
+}
+.dialog .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.dialog .content {
+    flex-basis: 50%;
+    height: 90%;
+    padding: 0.5rem;
+    width: 100%;
+}
+.dialog .content .download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18rem;
+    height: auto;
+    margin: 0 auto;
+}
+.dialog .content .download img {
+    width: 12rem;
+    border-radius: 5px;
+    height: 2.5rem;
+}
+.dialog .content .download div {
+    margin-right: 0.5rem;
+}
+.dialog .content p {
+    font-weight: bold;
+    margin-bottom: 1.7rem;
+}
+.dialog .content p span {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-left: 1rem;
+}
