@@ -1,7 +1,7 @@
 .swiper_animation .swiper-pagination {
     width: 9rem !important;
     position: absolute;
-    bottom: 76px !important;
+    bottom: 5px !important;
     left: -27px !important;
 }
 
@@ -23,7 +23,6 @@
     width: 12px;
     height: 12px;
 }
-/* buggggggggggggggggggggggggggggggg */
 .swiper_animation .swiper-slide {
     padding: 0 1.3rem;
 }

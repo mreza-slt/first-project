@@ -1,11 +1,12 @@
 .main {
     background: #f4f9fe;
-    margin-bottom: 4rem;
-    padding-bottom: 6rem;
+    padding-bottom: 1rem;
+    width: 100%;
 }
 
 .main .pakage_content {
     margin: 3rem auto;
+    max-width: 960px;
 }
 
 .main .pakage_content .content {
@@ -16,27 +17,33 @@
     margin-right: auto;
     opacity: 0.69;
 }
+.main .pakage_content p {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 0.75rem;
+}
 .main .pakage_content .content h1 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
+    text-align: center;
 }
-.main .pakage_content {
-    width: 960px;
-}
+
 .main .img {
-    width: 316px !important;
-    height: 321px !important;
+    overflow: hidden;
+    max-width: 316px !important;
+    max-height: 321px !important;
     cursor: pointer;
 }
 .main .img img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 316px !important;
+    height: 321px !important;
     border-radius: 10px;
     position: relative;
 }
 .swiper {
     height: 25rem !important;
-    padding: 1rem !important;
+    padding: 1rem 2rem !important;
     max-width: 910px;
     position: relative;
 }

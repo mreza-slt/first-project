@@ -56,20 +56,18 @@ const AnimationSlider = () => {
   return (
     <main className={`swiper_animation ${styles.main}`}>
       <div>
-        <div className={styles.animate}>
-          <div className={styles.animate_content}>
-            <div
-              className={`${styles.contentSlide}  animate__animated animate__flash`}
-            >
-              <h3>Animated exercises</h3>
-              <p>
-                There are more than 1,500 training exercises exist inRambody,
-                and as a trainer, I will design and send you aspecial workout
-                plan by choosing from these exercises. Notethat these plans
-                havent been prepared in advance and I willdesign and submit the
-                plan based on your needs and after thespecified time.
-              </p>
-            </div>
+        <div className={styles.animate_content}>
+          <div
+            className={`${styles.contentSlide}  animate__animated animate__flash`}
+          >
+            <h3>Animated exercises</h3>
+            <p>
+              There are more than 1,500 training exercises exist inRambody, and
+              as a trainer, I will design and send you aspecial workout plan by
+              choosing from these exercises. Notethat these plans havent been
+              prepared in advance and I willdesign and submit the plan based on
+              your needs and after thespecified time.
+            </p>
             {media ? (
               ""
             ) : (
@@ -83,38 +81,38 @@ const AnimationSlider = () => {
                 <span className="swiper-pagination-bullet"></span>
               </div>
             )}
+          </div>
 
-            <div className={styles.imageSlider}>
-              <div>
-                <Swiper
-                  onSlideChange={handlerChangeSlider}
-                  slidesPerView={media ? 2.5 : 2}
-                  spaceBetween={-15}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: true,
-                  }}
-                  pagination={{
-                    clickable: true,
-                    el: ref,
-                    type: "custom",
-                  }}
-                  loop={true}
-                  modules={[Autoplay, Thumbs, Pagination]}
-                >
-                  {content.map((c) => (
-                    <SwiperSlide key={c.id}>
-                      <div>
-                        <img
-                          className={styles.img}
-                          src={c.src}
-                          alt="animate_img"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
+          <div className={styles.imageSlider}>
+            <div>
+              <Swiper
+                onSlideChange={(data) => console.log(data)}
+                slidesPerView={media ? 2.5 : 2}
+                spaceBetween={media ? -30 : -15}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: true,
+                }}
+                pagination={{
+                  clickable: true,
+                  el: ref,
+                  type: "custom",
+                }}
+                loop={true}
+                modules={[Autoplay, Thumbs, Pagination]}
+              >
+                {content.map((c) => (
+                  <SwiperSlide key={c.id} id={c.id}>
+                    <div>
+                      <img
+                        className={styles.img}
+                        src={c.src}
+                        alt="animate_img"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

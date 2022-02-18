@@ -3,27 +3,21 @@
     height: 360px;
 }
 
-.animate {
-    position: relative;
-    width: 1224px;
-    height: 100%;
-    margin: 0 0 0 auto;
-}
-
 .animate_content {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1224px;
+    width: 1224px;
     height: 100%;
+    padding-left: 1.6rem;
+    margin: 0 0 0 auto;
 }
 .contentSlide {
-    flex-basis: 33.3%;
-    max-width: 33.3%;
-    height: 100%;
-    margin-top: 25px;
-    padding: 0 0.3rem;
-    background: #fff;
     position: relative;
+    flex-basis: 33.3%;
+    width: 33.3%;
+    height: 288px;
+    margin-top: 40px;
+    background: #fff;
 }
 .contentSlide h3 {
     font-size: 1.8rem;
@@ -35,7 +29,7 @@
 .contentSlide p {
     text-align: justify;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.8;
     opacity: 0.69;
 }
@@ -73,10 +67,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .animate_content {
-        padding-left: 1.5rem;
-        max-width: 1280px;
-    }
 }
 @media screen and (max-width: 960px) {
     .main {
@@ -86,18 +76,25 @@
         flex-direction: column;
         flex-wrap: nowrap;
         height: 100%;
+        padding-left: 0;
     }
     .imageSlider {
-        flex-basis: 100%;
         width: 100%;
         height: 100%;
+        padding-left: 0;
     }
     .contentSlide {
-        flex-basis: 100%;
         width: 100%;
         height: 100%;
         margin-top: 25px;
-        padding: 0 0.3rem;
+        padding: 0 1.5rem;
+    }
+    .imageSlider img {
+        height: 248px;
+        width: 328px;
+    }
+    .imageSlider::after {
+        display: none;
     }
 }
 @media screen and (max-width: 600px) {

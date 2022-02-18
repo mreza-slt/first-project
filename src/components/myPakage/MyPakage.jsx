@@ -15,28 +15,28 @@ const MyPakage = () => {
   const pakages = [
     {
       id: 1,
-      src: "https://lifediet.ir/wp-content/uploads/2019/06/image3-1.jpg",
+      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
       price: "100,000 T",
       h1: "fitness",
       p: "vip 6weeks",
     },
     {
       id: 2,
-      src: "https://lifediet.ir/wp-content/uploads/2019/06/image3-1.jpg",
+      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
       price: "300,000 T",
       h1: "برنامه غذایی",
       p: "رژیم غذایی",
     },
     {
       id: 3,
-      src: "https://vazneh-gym.ir/wp-content/uploads/2019/03/%DA%86%D8%B1%D8%A7-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%B2-%D9%85%DA%A9%D9%85%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A8%D8%AF%D9%86%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%DA%A9%D9%86%DB%8C%D9%85%D8%9F.jpg",
+      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
       price: "100,000 T",
       h1: "تمرینی",
       p: "تمرین با وزنه و هوازی",
     },
     {
       id: 4,
-      src: "https://vazneh-gym.ir/wp-content/uploads/2019/03/%DA%86%D8%B1%D8%A7-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%B2-%D9%85%DA%A9%D9%85%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A8%D8%AF%D9%86%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%DA%A9%D9%86%DB%8C%D9%85%D8%9F.jpg",
+      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
       price: "100 T",
       h1: "تخصصی بدنسازی",
       p: "برنامه تخصصی",
