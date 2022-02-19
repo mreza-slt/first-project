@@ -1,8 +1,7 @@
 .tutorial {
     width: 100%;
-    height: 48rem;
     background: #f4f9fe;
-    padding: 2rem;
+    padding: 2rem 0;
     color: #394959;
 }
 .tutorial h1 {
@@ -11,13 +10,14 @@
 }
 .tutorial p {
     font-weight: 400;
-    width: 504px;
+    max-width: 504px;
+    padding: 0 0.75rem;
     margin: 1rem auto;
 }
 
 .tutorial .slider {
-    max-width: 960px;
-    margin: 4rem auto 0rem auto;
+    max-width: calc(100vw - ((100vw - 960px) / 2));
+    margin: 4rem 0 0 auto;
     position: relative;
 }
 .tutorial .slider::after {

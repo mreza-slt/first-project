@@ -13,9 +13,9 @@ const Home = () => {
       <OverView />
       {/* <AnimationSlider /> */}
       <MyPakage />
-      {/* <GetApp />
+      <GetApp />
       <Tutorial />
-      <Footer /> */}
+      {/* <Footer /> */}
     </>
   );
 };

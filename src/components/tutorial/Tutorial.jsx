@@ -1,16 +1,20 @@
 import styles from "./tutorial.module.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper";
+
 import PlayCircleIcon from "@mui/icons-material/PlayCircle"; // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import "swiper/css/scrollbar";
 
 import "./styless.css";
 import AlertTutorial from "../../common/alertTutorial/AlertDialogTutorial";
 import { useState } from "react";
 import AnimateStart from "../../common/animateScroll";
+import { useMediaQuery } from "@mui/material";
 
 const Tutorial = () => {
   const tutorial = [
@@ -43,6 +47,8 @@ const Tutorial = () => {
       id: 3,
     },
   ];
+  const lgQuery = useMediaQuery("(max-width:1280px)");
+
   const { ref, scroll } = AnimateStart();
 
   const [open, setOpen] = useState(false);
@@ -76,8 +82,10 @@ const Tutorial = () => {
           <Swiper
             grabCursor={true}
             watchSlidesProgress={true}
-            slidesPerView={2}
+            slidesPerView={lgQuery ? "auto" : 2.99}
             spaceBetween={25}
+            scrollbar={lgQuery ? true : false}
+            modules={[Scrollbar]}
             className="mySwiper"
           >
             {tutorial.map((t) => (

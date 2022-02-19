@@ -82,3 +82,9 @@
     left: -50px;
     transform: rotate(180deg);
 }
+@media screen and (max-width: 960px) {
+    .main .pakage_content .content h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+}
