@@ -1,10 +1,9 @@
 .alertTutorial {
-    width: 960px;
-    min-height: 24rem;
+    position: relative;
     background: #fff;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
+    max-width: 960px;
 }
 .alertTutorial .logo {
     margin: 1.5rem auto 1rem auto;
@@ -14,8 +13,7 @@
     flex-basis: 50%;
     width: 100%;
     max-height: 40rem;
-    margin: auto 0 0 0;
-    padding: 0.5rem 1rem;
+    padding: 1rem 0 1rem 0.5rem;
 }
 
 .alertTutorial .video video {
@@ -27,20 +25,35 @@
     flex-basis: 50%;
     height: 100%;
     width: 100%;
-    margin: 0 0 2rem 0;
+    margin-bottom: 4rem;
 }
 .alertTutorial .content p {
-    text-align-last: justify;
-    font-size: small;
-    font-weight: bold;
-    padding: 1rem;
+    text-align: justify;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-left: 0.5rem;
 }
 .alertTutorial .content h3 {
-    text-align-last: center;
+    text-align: center;
     font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
-.alertTutorial button {
+.myBtn {
     position: absolute;
-    left: 24px;
+    left: 9px;
     bottom: 9px;
+}
+@media screen and (max-width: 960px) {
+    .alertTutorial {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .alertTutorial .content {
+        margin-bottom: 1rem;
+    }
+    .alertTutorial .content p {
+        font-size: 0.82rem;
+        font-weight: 500;
+    }
 }

@@ -1,19 +1,17 @@
-import styles from "./tutorial.module.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar } from "swiper";
+import { Autoplay, Scrollbar } from "swiper";
+import "swiper/css";
 
 import PlayCircleIcon from "@mui/icons-material/PlayCircle"; // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
-import "swiper/css/scrollbar";
 
+import styles from "./tutorial.module.css";
 import "./styless.css";
-import AlertTutorial from "../../common/alertTutorial/AlertDialogTutorial";
-import { useState } from "react";
+
 import AnimateStart from "../../common/animateScroll";
+import AlertTutorial from "../../common/alertTutorial/AlertDialogTutorial";
+
+import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 
 const Tutorial = () => {
@@ -23,10 +21,19 @@ const Tutorial = () => {
       h3: "1. How to request a pakage",
       video:
         "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/request_a_plan.mp4#t=0.1",
-      desc: "In this section, I will show you how to request a package via the Rambody application. \n 1. After installing the application, search for my ID (mehdiSherafat) in the search page2. Enter my profile. Read the description of the package and choose the one that fits your needs and goal.Plans are not pre-designed. I will design a custom plan based on your physical condition and goal.3. Pay for your selected package fee using your my payment method. You can see my payment method by clicking the ‘Request Package’ button.4. Once you have paid for the package go to the app and click on the 'I paid' button to complete the request.5. On the next page, enter the payment information or upload your receipt then request the package.6. You will receive an initial notification when I approved and started to prepare your plan. I needs some time to prepare a custom plan for you. Once I completed the plan you will receive another notification that your plan is ready to use.",
+      descr: [
+        "In this section, I will show you how to request a package via the Rambody application.",
+        "1. After installing the application, search for my ID (mehdiSherafat) in the search page",
+        "2. Enter my profile. Read the description of the package and choose the one that fits your needs and goal.Plans are not pre-designed. I will design a custom plan based on your physical condition and goal.",
+        "3. Pay for your selected package fee using your my payment method. You can see my payment method by clicking the ‘Request Package’ button.",
+        "4. Once you have paid for the package go to the app and click on the 'I paid' button to complete the request.",
+        "5. On the next page, enter the payment information or upload your receipt then request the package.",
+        "6. You will receive an initial notification when I approved and started to prepare your plan. I needs some time to prepare a custom plan for you. Once I completed the plan you will receive another notification that your plan is ready to use.",
+      ],
       logo: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/request_a_plan.png",
       id: 1,
     },
+
     {
       src: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/client_profile.jpg",
       h3: "2. Your profile in the trainer application",
@@ -36,6 +43,7 @@ const Tutorial = () => {
       logo: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/client_profile.png",
       id: 2,
     },
+
     {
       src: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/create_workout.jpg",
       h3: "3. How your trainer designs a custom workout",
@@ -53,10 +61,12 @@ const Tutorial = () => {
 
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
+
   const handleClickOpen = (data) => {
     setOpen(true);
     setData(data);
   };
+
   return (
     <div className={`${styles.tutorial} totorial`}>
       <div ref={ref} className="text-center">
@@ -85,7 +95,11 @@ const Tutorial = () => {
             slidesPerView={lgQuery ? "auto" : 2.99}
             spaceBetween={25}
             scrollbar={lgQuery ? true : false}
-            modules={[Scrollbar]}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: true,
+            }}
+            modules={[Scrollbar, Autoplay]}
             className="mySwiper"
           >
             {tutorial.map((t) => (
