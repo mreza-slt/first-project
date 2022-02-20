@@ -1,16 +1,19 @@
-import { Button } from "@mui/material";
+import AnimateStart from "../../common/animateScroll";
 import NavBar from "../navigation/NavBar";
 import styles from "./header.module.css";
 
 const Header = () => {
+  const { scroll, ref } = AnimateStart();
   return (
     <main className={styles.header}>
       <section>
         <NavBar />
       </section>
-      <section className={styles.section_parent}>
+      <section ref={ref} className={styles.section_parent}>
         <div className={styles.content}>
-          <div className="animate__animated animate__fadeInDown">
+          <div
+            className={scroll ? "animate__animated animate__fadeInDown" : ""}
+          >
             <h1>MEHDI SHERAFAT</h1>
             <h2 className="font-normal text-xl">@mehdisherafat</h2>
           </div>

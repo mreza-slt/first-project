@@ -2,13 +2,13 @@
     display: flex;
     align-items: flex-start;
     width: 100%;
-    flex-wrap: wrap;
     color: rgb(57, 73, 89);
+    margin-top: 3rem;
 }
 .child_1 .section_1,
 .section_2 {
-    max-width: 50%;
     flex-basis: 50%;
+    width: 100%;
 }
 
 .child_1 ul .li {
@@ -24,6 +24,10 @@
     }
     .section_2 {
         margin-top: 2rem;
+    }
+    .child_1 .section_1,
+    .section_2 {
+        flex-basis: 100%;
     }
 }
 @media screen and (max-width: 960px) {

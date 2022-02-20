@@ -75,15 +75,14 @@
     }
     .content {
         order: 2;
-        margin: 0 !important;
     }
 }
 @media screen and (max-width: 960px) {
     .header {
         background: #9fa2a6;
-        height: 77vh;
         max-width: 960px;
         color: #fff;
+        height: 36.5rem;
     }
     .section_parent {
         width: 100%;
@@ -108,11 +107,13 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        display: block;
     }
 }
 @media screen and (max-width: 600px) {
     .section_parent {
         margin: 0 0.75rem;
+    }
+    .content {
+        order: 2;
     }
 }

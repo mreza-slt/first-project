@@ -15,6 +15,7 @@ import { useMediaQuery } from "@mui/material";
 
 const AnimationSlider = () => {
   const slideRef = useRef(null);
+
   const [ref, setRef] = useState(null);
 
   const media = useMediaQuery("(max-width:960px)");
@@ -50,16 +51,12 @@ const AnimationSlider = () => {
     },
   ];
 
-  const handlerChangeSlider = () => {
-    content.map((c) => console.log());
-  };
+  const handlerChangeSlider = () => {};
   return (
     <main className={`swiper_animation ${styles.main}`}>
       <div>
         <div className={styles.animate_content}>
-          <div
-            className={`${styles.contentSlide}  animate__animated animate__flash`}
-          >
+          <div className={`${styles.contentSlide} `}>
             <h3>Animated exercises</h3>
             <p>
               There are more than 1,500 training exercises exist inRambody, and
@@ -68,27 +65,16 @@ const AnimationSlider = () => {
               prepared in advance and I willdesign and submit the plan based on
               your needs and after thespecified time.
             </p>
-            {media ? (
-              ""
-            ) : (
-              <div
-                ref={slideRef}
-                className={`swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal ${styles.pagination}`}
-              >
-                <span className="swiper-pagination-bullet "></span>
-                <span className="swiper-pagination-bullet"></span>
-                <span className="swiper-pagination-bullet"></span>
-                <span className="swiper-pagination-bullet"></span>
-              </div>
-            )}
+            <div ref={slideRef} className={styles.pagination}></div>
           </div>
 
           <div className={styles.imageSlider}>
             <div>
               <Swiper
-                onSlideChange={(data) => console.log(data)}
-                slidesPerView={media ? 2.5 : 2}
-                spaceBetween={media ? -30 : -15}
+                grabCursor={true}
+                onSlideChange={handlerChangeSlider}
+                slidesPerView={"auto"}
+                spaceBetween={media ? -45 : -15}
                 autoplay={{
                   delay: 5000,
                   disableOnInteraction: true,
@@ -96,10 +82,10 @@ const AnimationSlider = () => {
                 pagination={{
                   clickable: true,
                   el: ref,
-                  type: "custom",
                 }}
                 loop={true}
                 modules={[Autoplay, Thumbs, Pagination]}
+                className="mySwiper"
               >
                 {content.map((c) => (
                   <SwiperSlide key={c.id} id={c.id}>

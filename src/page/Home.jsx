@@ -11,11 +11,11 @@ const Home = () => {
     <>
       <Header />
       <OverView />
-      {/* <AnimationSlider /> */}
+      <AnimationSlider />
       <MyPakage />
       <GetApp />
       <Tutorial />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
