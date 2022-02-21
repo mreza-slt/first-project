@@ -1,13 +1,12 @@
 .child_2 {
     width: 100%;
-    height: 33rem;
     position: relative;
-    margin: 3rem 0 0 0;
+    margin: 3rem 0 9rem 0;
 }
 .child_2 .video {
     max-width: 552px;
-    height: 405px;
-    margin: 0 auto 0;
+    max-height: 405px;
+    margin: 0 auto;
     z-index: 2;
 }
 .child_2 .video video {
@@ -21,12 +20,17 @@
         center/cover;
     height: 240px;
     width: 240px;
-    bottom: 46px;
+    bottom: -73px;
     right: 87px;
     z-index: -1;
 }
 @media screen and (max-width: 960px) {
     .img {
         display: none;
+    }
+}
+@media screen and (max-width: 960px) {
+    .child_2 {
+        margin: 3rem 0 4rem 0;
     }
 }

@@ -44,7 +44,7 @@ const NavBar = () => {
                   <Fade {...TransitionProps} timeout={350}>
                     <Paper>
                       <Typography sx={{ p: 2 }}>
-                        <p>English</p>
+                        <Button>English</Button>
                         <p>فارسی</p>
                         <p>العربیه</p>
                       </Typography>
