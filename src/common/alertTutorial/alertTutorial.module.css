@@ -40,7 +40,7 @@
     margin-bottom: 1rem;
 }
 .myBtn {
-    position: absolute;
+    position: absolute !important;
     left: 9px;
     bottom: 9px;
 }

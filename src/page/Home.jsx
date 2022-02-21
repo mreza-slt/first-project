@@ -5,18 +5,31 @@ import MyPakage from "../components/myPakage/MyPakage";
 import OverView from "../components/overview/OverView";
 import Tutorial from "../components/tutorial/Tutorial";
 import Footer from "../components/footer/Footer";
-
+import { useState } from "react";
+import Loading from "../common/loading/Loading";
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 5000);
+
   return (
-    <>
-      <Header />
-      <OverView />
-      <AnimationSlider />
-      <MyPakage />
-      <GetApp />
-      <Tutorial />
-      <Footer />
-    </>
+    <div className="h-screen" style={{ background: "#fff" }}>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Header />
+          <OverView />
+          <AnimationSlider />
+          <MyPakage />
+          <GetApp />
+          <Tutorial />
+          <Footer />
+        </>
+      )}
+    </div>
   );
 };
 

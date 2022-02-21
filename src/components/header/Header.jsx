@@ -1,8 +1,10 @@
+import { useParams } from "react-router-dom";
 import AnimateStart from "../../common/animateScroll";
 import NavBar from "../navigation/NavBar";
 import styles from "./header.module.css";
 
 const Header = () => {
+  const params = useParams();
   const { scroll, ref } = AnimateStart();
   return (
     <main className={styles.header}>
@@ -14,8 +16,8 @@ const Header = () => {
           <div
             className={scroll ? "animate__animated animate__fadeInDown" : ""}
           >
-            <h1>MEHDI SHERAFAT</h1>
-            <h2 className="font-normal text-xl">@mehdisherafat</h2>
+            <h1>{params.name.toUpperCase()}</h1>
+            <h2 className="font-normal text-xl">@{params.name}</h2>
           </div>
           <button className={styles.myBtn}>Open app</button>
         </div>
