@@ -6,6 +6,9 @@ import styles from "./header.module.css";
 const Header = () => {
   const params = useParams();
   const { scroll, ref } = AnimateStart();
+
+  document.title = `${document.title} - ` + params.name;
+
   return (
     <main className={styles.header}>
       <section>
