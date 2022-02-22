@@ -15,6 +15,7 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 
+// use of {i18next} pakage for change language
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)

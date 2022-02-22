@@ -1,17 +1,69 @@
 import {
   Button,
   Fade,
+  Menu,
+  MenuItem,
   Paper,
   Popper,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
-import PopupState, { bindToggle, bindPopper } from "material-ui-popup-state";
 import styles from "./navBar.module.css";
 import { Language } from "@mui/icons-material";
 
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import cookies from "js-cookie";
+import { useEffect, useState } from "react";
+
+// language lists
+const languages = [
+  {
+    code: "en",
+    name: "English",
+    country_code: "gb",
+  },
+  {
+    code: "ar",
+    name: "العربية",
+    country_code: "sa",
+    dir: "rtl",
+  },
+  {
+    code: "fa",
+    name: "فارسی",
+    country_code: "ir",
+    dir: "rtl",
+  },
+];
+
 const NavBar = () => {
+  // get media query
   const media = useMediaQuery("(max-width:960px)");
+
+  // use of cookies pakage for get code from cookies
+  const currentLanguageCode = cookies.get("i18next") || "en";
+
+  const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
+
+  // Get data related to any language
+  const { t } = useTranslation();
+
+  // change {dir} Due to the language
+  useEffect(() => {
+    document.body.dir = currentLanguage.dir || "ltr";
+    document.title = t("title");
+  }, [currentLanguage]);
+
+  // Drawer component function
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (code) => {
+    i18next.changeLanguage(code);
+    setAnchorEl(null);
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -25,36 +77,41 @@ const NavBar = () => {
         <img src="https://rambody-trainer.azureedge.net/static/media/logo-rambody-white.818c0b64.png" />
       </div>
       <div>
-        <PopupState variant="popper" popupId="demo-popup-popper">
-          {(popupState) => (
-            <div>
-              <Button
-                className={styles.myBtn}
-                variant="outlined"
-                {...bindToggle(popupState)}
-              >
-                <Language
-                  color="primary"
-                  className={`p-0.5 mr-1 ${styles.icon}`}
-                />
-                <span>{media ? "EN" : "English"}</span>
-              </Button>
-              <Popper {...bindPopper(popupState)} transition>
-                {({ TransitionProps }) => (
-                  <Fade {...TransitionProps} timeout={350}>
-                    <Paper>
-                      <Typography sx={{ p: 2 }}>
-                        <Button>English</Button>
-                        <p>فارسی</p>
-                        <p>العربیه</p>
-                      </Typography>
-                    </Paper>
-                  </Fade>
-                )}
-              </Popper>
-            </div>
-          )}
-        </PopupState>
+        <div>
+          <Button
+            variant="outlined"
+            className={styles.myBtn}
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            <Language color="primary" className={`p-0.5 mr-1 ${styles.icon}`} />
+            {media ? currentLanguage.code : currentLanguage.name}
+          </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            {languages.map(({ code, name, country_code }) => (
+              <div key={country_code}>
+                <MenuItem
+                  className={code === currentLanguageCode ? "font-bold" : ""}
+                  onClick={() => handleClose(code)}
+                >
+                  {/* <span
+                    className={`flag-icon flag-icon-${country_code}`}
+                  ></span> */}
+                  {media ? code : name}
+                </MenuItem>
+              </div>
+            ))}
+          </Menu>
+        </div>
       </div>
     </nav>
   );
