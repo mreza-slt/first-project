@@ -1,18 +1,12 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import { Typography, useMediaQuery } from "@mui/material";
+import { useState } from "react";
 import { Autoplay, Scrollbar } from "swiper";
 import "swiper/css";
-
-import PlayCircleIcon from "@mui/icons-material/PlayCircle"; // Import Swiper styles
-
-import styles from "./tutorial.module.css";
-import "./styless.css";
-
-import AnimateStart from "../../common/animateScroll";
+import { Swiper, SwiperSlide } from "swiper/react";
 import AlertTutorial from "../../common/alertTutorial/AlertDialogTutorial";
-
-import { useState } from "react";
-import { useMediaQuery } from "@mui/material";
+import AnimateStart from "../../common/animateScroll";
+import "./tutorial.scss";
 
 const Tutorial = () => {
   const tutorial = [
@@ -55,6 +49,7 @@ const Tutorial = () => {
       id: 3,
     },
   ];
+
   const lgQuery = useMediaQuery("(max-width:1280px)");
 
   const { ref, scroll } = AnimateStart();
@@ -68,24 +63,31 @@ const Tutorial = () => {
   };
 
   return (
-    <div className={`${styles.tutorial} totorial`}>
+    <div className="tutorial">
       <div ref={ref} className="text-center">
-        <h1
-          className={`font-bold ${
-            scroll ? "animate__fadeInRight animate__animated" : ""
-          }`}
+        <Typography
+          variant="h4"
+          my={"2rem"}
+          fontWeight={500}
+          className={scroll ? "animate__fadeInRight animate__animated" : ""}
         >
           Tutorial
-        </h1>
-        <p className={scroll ? "animate__fadeInLeft animate__animated" : ""}>
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          maxWidth={"504px"}
+          px={"0.75rem"}
+          m={"1rem auto"}
+          className={scroll ? "animate__fadeInLeft animate__animated" : ""}
+        >
           Watch tutorial videos here for better use and knowledge of how to
           design training plans
-        </p>
+        </Typography>
       </div>
       <div>
-        <div className={styles.slider}>
+        <div className="slider">
           <img
-            className={styles.img_1}
+            className="img_1"
             src="https://rambody-trainer.azureedge.net/static/media/texture.55db9915.png"
             alt=""
           />
@@ -100,13 +102,20 @@ const Tutorial = () => {
               disableOnInteraction: true,
             }}
             modules={[Scrollbar, Autoplay]}
-            className="mySwiper"
           >
             {tutorial.map((t) => (
               <SwiperSlide key={t.id}>
                 <img src={t.src} alt="toutrial" />
-                <div className={styles.text_img}>
-                  <h3>{t.h3}</h3>
+                <div className="text_img">
+                  <Typography
+                    variant="h6"
+                    fontWeight={500}
+                    mt={"3rem"}
+                    textAlign={"left"}
+                    pl={"1rem"}
+                  >
+                    {t.h3}
+                  </Typography>
                   <button onClick={() => handleClickOpen(t)}>
                     <PlayCircleIcon color="primary" sx={{ fontSize: 40 }} />
                   </button>

@@ -4,11 +4,10 @@ import {
   DialogActions,
   DialogContent,
   Slide,
+  Typography,
 } from "@mui/material";
-
 import { forwardRef } from "react";
-import styles from "./alertPakage.module.css";
-import "./styles.css";
+import "./alertPakage.scss";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -29,22 +28,31 @@ const AlertDialog = ({ open, data, setOpen }) => {
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogContent>
-          <div className={styles.dialog}>
-            <div className={styles.img}>
+          <div className="alert_pakage">
+            <div className="img">
               <img src={data.src} alt="" />
-              <div className={styles.img_content}></div>
-              <div className={styles.content_1}>
-                <h1>{data.h1}</h1>
-                <p>{data.p}</p>
+              <div className="img_content"></div>
+              <div className="content_1">
+                <Typography variant="h6" mb={"1rem"}>
+                  {data.h1}
+                </Typography>
+                <Typography variant="body2">{data.p}</Typography>
               </div>
             </div>
 
-            <div className={styles.content}>
-              <h1>HOW DO I APPLY FOR A PACKAGE?</h1>
+            <div className="content">
+              <Typography
+                variant="h6"
+                fontWeight={500}
+                pl={"1.5rem"}
+                my={"0.5rem"}
+              >
+                HOW DO I APPLY FOR A PACKAGE?
+              </Typography>
               <hr />
               <div>
                 <div>
-                  <p className="a">
+                  <p>
                     STEP 1<span>Download Rambody application</span>
                   </p>
                   <p>
@@ -64,7 +72,7 @@ const AlertDialog = ({ open, data, setOpen }) => {
                   </p>
                 </div>
               </div>
-              <div className={styles.download}>
+              <div className="download">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=co.rambody">
                     <img

@@ -1,0 +1,124 @@
+.footer_parent {
+  width: 100%;
+  background: #394959;
+  padding: 0 0.25rem;
+  // 1:
+  .content {
+    flex-basis: 33.33%;
+    width: 100%;
+    font-size: small;
+    color: #fff;
+    margin-bottom: 1rem;
+
+    img {
+      width: 10rem;
+      height: 2.5rem;
+      margin: 1.7rem 0;
+    }
+  }
+
+  .footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+
+    &_content {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      img {
+        width: 10rem;
+        height: 2.5rem;
+        margin: 1.7rem 0;
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 600px;
+      margin: 0.5rem 0;
+      a {
+        display: block;
+        margin-top: 1rem;
+      }
+      div:first-child a {
+        color: #387cff;
+      }
+      div:last-child a {
+        text-decoration: underline;
+        color: #fff;
+        opacity: 0.69;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  // 2:
+  .footer_2_parent {
+    background: #334250;
+    width: 100%;
+
+    .footer_2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 0.5rem 0 0.5rem;
+      color: #fff;
+
+      .icons {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          background: #bbc2cb;
+          color: #5b6065;
+          width: 27px;
+          height: 27px;
+          margin-left: 0.2rem;
+          padding: 0.2rem;
+          border-radius: 50%;
+          transition: all 0.3s;
+
+          &:hover {
+            background: #2f3d49;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .footer_parent {
+    .content {
+      flex-basis: 100%;
+      width: 100%;
+    }
+    .links {
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  .footer_2_parent .footer_2 {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .icon {
+      background: #bbc2cb;
+      color: #5b6065;
+      width: 27px;
+      height: 27px;
+      margin: 0 0.5rem 1rem 0;
+      padding: 0.2rem;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+  }
+}

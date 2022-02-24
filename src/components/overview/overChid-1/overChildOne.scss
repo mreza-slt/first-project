@@ -1,0 +1,43 @@
+.child_1 {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  color: rgb(57, 73, 89);
+  margin-top: 3rem;
+
+  .section_1 {
+    flex-basis: 50%;
+    width: 100%;
+
+    ul .li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  }
+  .section_2 {
+    flex-basis: 50%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .child_1 {
+    flex-direction: column;
+    max-width: 1280px;
+
+    .section_1 {
+      flex-basis: 100%;
+    }
+    .section_2 {
+      margin-top: 2rem;
+      flex-basis: 100%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .child_1 .section_2 {
+    margin-top: 1rem;
+  }
+}

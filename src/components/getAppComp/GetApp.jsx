@@ -1,26 +1,28 @@
+import { Typography } from "@mui/material";
 import AnimateStart from "../../common/animateScroll";
-import styles from "./getApp.module.css";
+import "./getApp.scss";
 const GetApp = () => {
   const { ref, scroll } = AnimateStart();
 
   return (
     <main className="w-full">
-      <div className={styles.getApp}>
-        <div className={styles.logo}>
+      <div className="getApp">
+        <div className="logo">
           <img
             src="https://rambody-trainer.azureedge.net/static/media/logo-rambody.6f2da0b2.png"
             alt=""
           />
         </div>
         <div ref={ref}>
-          <h1
-            className={`font-bold ${
-              scroll ? "animate__backInLeft animate__animated" : ""
-            }`}
+          <Typography
+            variant="h4"
+            fontWeight={600}
+            mb={"1.5rem"}
+            className={scroll ? "animate__backInLeft animate__animated" : ""}
           >
             Download Application
-          </h1>
-          <div className={styles.img}>
+          </Typography>
+          <div className="img">
             <a href="https://play.google.com/store/apps/details?id=co.rambody">
               <div>
                 <img

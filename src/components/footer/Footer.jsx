@@ -1,24 +1,30 @@
-import styles from "./footer.module.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { Typography } from "@mui/material";
+import "./footer.scss";
 
 const Footer = () => {
   return (
-    <div className={styles.footer_parent}>
-      <div className={styles.footer}>
-        <div className={styles.footert_content}>
-          <div className={styles.content}>
+    <div className="footer_parent">
+      <div className="footer">
+        <div className="footer_content">
+          <div className="content">
             <img
               src="https://rambody-trainer.azureedge.net/static/media/logo-rambody-text-white.c792b75a.png"
               alt=""
             />
-            <p>
+            <Typography
+              variant="subtitle2"
+              fontSize={".85rem"}
+              fontWeight={450}
+              className="opacity-70"
+            >
               Rambody is a communication platform between trainers and trainees
               to provide a dedicated training and nutrition plan.
-            </p>
+            </Typography>
           </div>
         </div>
-        <div className={styles.links}>
+        <div className="links">
           <div>
             <a href="https://www.rambody.ca/">www.Rambody.com</a>
             <a href="info@rambody.com">info@rambody.com</a>
@@ -32,20 +38,25 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={styles.footer_2_parent}>
-        <div className={styles.footer_2}>
-          <div className={styles.content}>
-            <p>
+      <div className="footer_2_parent">
+        <div className="footer_2">
+          <div className="content">
+            <Typography
+              variant="subtitle2"
+              fontSize={".85rem"}
+              fontWeight={400}
+              className="opacity-70"
+            >
               All rights reserved 2019. Farosa Technologies Inc. Farosa
               Technologies Inc
-            </p>
+            </Typography>
           </div>
-          <div className={styles.icons}>
+          <div className="icons">
             <a href="https://www.instagram.com/accounts/login/?next=/rambody.app/">
-              <InstagramIcon className={styles.icon} fontSize="small" />
+              <InstagramIcon className="icon" fontSize="small" />
             </a>
             <a href="https://twitter.com/RambodyApp/">
-              <TwitterIcon className={styles.icon} fontSize="small" />
+              <TwitterIcon className="icon" fontSize="small" />
             </a>
           </div>
         </div>

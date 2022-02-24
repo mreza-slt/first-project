@@ -1,14 +1,16 @@
-import { ListItemButton } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
-import styles from "./overChildOne.module.css";
+import { ListItemButton, Typography } from "@mui/material";
 import AnimateStart from "../../../common/animateScroll";
+import "./overChildOne.scss";
 
 const OverChildOne = () => {
   const { ref, scroll } = AnimateStart();
   return (
-    <div className={styles.child_1}>
-      <div className={styles.section_1}>
-        <h1 className=" mb-4 text-3xl font-bold font-sans">My Expertise</h1>
+    <div className="child_1">
+      <div className="section_1">
+        <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
+          My Expertise
+        </Typography>
         <ul
           ref={ref}
           className={
@@ -17,23 +19,25 @@ const OverChildOne = () => {
               : ""
           }
         >
-          <ListItemButton className={`${styles.li}`}>
+          <ListItemButton className="li">
             <CircleIcon color="primary" sx={{ fontSize: 10 }} />
-            <li className="pl-4 ">
+            <Typography className="pl-4 ">
               <span className="font-bold">Bodybuilding</span> (Expert)
-            </li>
+            </Typography>
           </ListItemButton>
 
-          <ListItemButton className={`${styles.li}`}>
+          <ListItemButton className="li">
             <CircleIcon color="primary" sx={{ fontSize: 10 }} />
-            <li className="pl-4 ">
+            <Typography className="pl-4 ">
               <span className="font-bold">Croosfit</span> (Expert)
-            </li>
+            </Typography>
           </ListItemButton>
         </ul>
       </div>
-      <div className={styles.section_2}>
-        <h1 className="text-3xl font-bold">My overview</h1>
+      <div className="section_2">
+        <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
+          My overview
+        </Typography>
       </div>
     </div>
   );

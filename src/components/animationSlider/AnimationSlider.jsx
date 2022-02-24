@@ -1,17 +1,12 @@
-import styles from "./animateSlide.module.css";
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
-import "./styles.css";
-// import required modules
-import { Autoplay, Pagination, Thumbs } from "swiper";
+import { Typography, useMediaQuery } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { useMediaQuery } from "@mui/material";
+import { Autoplay, Pagination, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/thumbs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./animateSlide.scss";
 
 const AnimationSlider = () => {
   const slideRef = useRef(null);
@@ -69,19 +64,28 @@ const AnimationSlider = () => {
   };
 
   return (
-    <main className={`swiper_animation ${styles.main}`}>
+    <main className="animation_slider">
       <div>
-        <div className={styles.animate_content}>
-          <div className={styles.contentSlide}>
+        <div className="animate_content">
+          <div className="contentSlide">
             <div className={className}>
-              <h3>{text.h1}</h3>
-              <p>{text.p}</p>
+              <Typography
+                variant="h4"
+                fontWeight={500}
+                fontSize={"2rem"}
+                className=""
+              >
+                {text.h1}
+              </Typography>
+              <Typography mt={3} variant="subtitle2">
+                {text.p}
+              </Typography>
             </div>
 
-            <div ref={slideRef} className={styles.pagination}></div>
+            <div ref={slideRef} className="pagination"></div>
           </div>
 
-          <div className={styles.imageSlider}>
+          <div className="imageSlider">
             <div>
               <Swiper
                 grabCursor={true}
@@ -103,11 +107,7 @@ const AnimationSlider = () => {
                 {content.map((c) => (
                   <SwiperSlide key={c.id} id={c.id}>
                     <div>
-                      <img
-                        className={styles.img}
-                        src={c.src}
-                        alt="animate_img"
-                      />
+                      <img className="img" src={c.src} alt="animate_img" />
                     </div>
                   </SwiperSlide>
                 ))}

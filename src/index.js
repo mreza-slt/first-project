@@ -32,9 +32,8 @@ i18n
     },
   });
 
-const loading = <div>loding...</div>;
 ReactDOM.render(
-  <Suspense fallback={loading}>
+  <Suspense>
     <React.StrictMode>
       <App />
     </React.StrictMode>

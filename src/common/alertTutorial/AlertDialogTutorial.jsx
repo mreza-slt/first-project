@@ -4,10 +4,12 @@ import {
   DialogActions,
   DialogContent,
   Slide,
+  Typography,
   useMediaQuery,
 } from "@mui/material";
 import { forwardRef } from "react";
-import styles from "./alertTutorial.module.css";
+import "./alertTutorial.scss";
+
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -30,20 +32,44 @@ const AlertTutorial = ({ open, data, setOpen }) => {
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogContent>
-          <div className={styles.alertTutorial}>
-            <div className={styles.content}>
-              <img src={data.logo} className={styles.logo} alt="" />
-              <h3>{data.h3}</h3>
+          <div className="alertTutorial">
+            <div className="content">
+              <img src={data.logo} className="logo" alt="" />
+              <Typography
+                variant="h6"
+                mb={"1rem"}
+                fontSize={"1.3rem"}
+                textAlign={"center"}
+              >
+                {data.h3}
+              </Typography>
               <div>
                 {data.descr ? (
-                  data.descr.map((data) => <p key={data}>{data}</p>)
+                  data.descr.map((data) => (
+                    <Typography
+                      textAlign={"justify"}
+                      variant="subtitle2"
+                      fontWeight={500}
+                      pl={"0.5rem"}
+                      key={data}
+                    >
+                      {data}
+                    </Typography>
+                  ))
                 ) : (
-                  <p>{data.desc}</p>
+                  <Typography
+                    textAlign={"justify"}
+                    variant="subtitle2"
+                    fontWeight={500}
+                    pl={"0.5rem"}
+                  >
+                    {data.desc}
+                  </Typography>
                 )}
               </div>
               {!mdQuery && (
                 <Button
-                  className={styles.myBtn}
+                  className="myBtn"
                   variant="contained"
                   onClick={handleClose}
                 >
@@ -51,7 +77,9 @@ const AlertTutorial = ({ open, data, setOpen }) => {
                 </Button>
               )}
             </div>
-            <div className={styles.video}>
+            <div
+              className={`video ${document.body.dir === "rtl" ? "mb-8" : ""}`}
+            >
               <video controls src={data.video} autoPlay />
             </div>
           </div>

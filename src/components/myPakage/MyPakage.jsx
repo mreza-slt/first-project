@@ -1,5 +1,3 @@
-import styles from "./pakage.module.css";
-import "./styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -7,9 +5,10 @@ import "swiper/css/effect-coverflow";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import { useState } from "react";
-
 import AlertDialog from "../../common/alertDialog-pakage/AlertDialog";
 import AnimateStart from "../../common/animateScroll";
+import { Typography } from "@mui/material";
+import "./pakage.scss";
 
 const MyPakage = () => {
   const pakages = [
@@ -45,6 +44,7 @@ const MyPakage = () => {
 
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
+
   const handleClickOpen = (data) => {
     setOpen(true);
     setData(data);
@@ -53,37 +53,42 @@ const MyPakage = () => {
   const { ref, scroll } = AnimateStart();
 
   return (
-    <main className={`${styles.main} w-fill text-center my_pakage`}>
-      <div className={styles.pakage_content}>
-        <section ref={ref} className={`${styles.content} py-8`}>
-          <h1
-            className={`font-bold ${
+    <main className="my_pakage text-center">
+      <div className="pakage_content">
+        <section ref={ref} className="content py-8">
+          <Typography
+            variant="h4"
+            fontWeight={500}
+            className={`h1 ${
               scroll ? "animate__animated animate__fadeInDown" : ""
             }`}
           >
             My packages
-          </h1>
-          <p
-            className={`font-medium ${
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            px={0.75}
+            className={
               scroll
                 ? "animate__animated animate__fadeInDown animate__slow"
                 : ""
-            }`}
+            }
           >
             You can see the list of my packages that I can design in this
             section. Note that these packages have not been prepared in advance
             and are designed based on your physical conditions and goal. You can
             also contact me via the chat button in my profile after installing
             the Rambody application.
-          </p>
+          </Typography>
         </section>
 
-        <div className={styles.parent_slide}>
+        <div className="parent_slide">
           <img
-            className={styles.img_bg}
+            className="img_bg"
             src="https://rambody-trainer.azureedge.net/static/media/texture.55db9915.png"
             alt="backgground_img"
           />
+
           <Swiper
             effect={"coverflow"}
             spaceBetween={100}
@@ -105,19 +110,23 @@ const MyPakage = () => {
               disableOnInteraction: true,
             }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
-            className={styles.swiper}
+            className="swiper"
           >
             {pakages.map((p) => (
               <SwiperSlide
                 key={p.id}
                 onClick={() => handleClickOpen(p)}
-                className={styles.img}
+                className="img"
               >
                 <img src={p.src} />
-                <span>{p.price}</span>
+                <span className="span">{p.price}</span>
                 <div>
-                  <h1>{p.h1}</h1>
-                  <p>{p.p}</p>
+                  <Typography variant="h5" fontWeight={500}>
+                    {p.h1}
+                  </Typography>
+                  <Typography variant="subtitle" fontWeight={500}>
+                    {p.p}
+                  </Typography>
                 </div>
               </SwiperSlide>
             ))}
