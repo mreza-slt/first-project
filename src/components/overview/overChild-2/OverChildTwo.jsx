@@ -1,3 +1,4 @@
+import animationVideo from "../../../assets/videos/animation.mp4";
 import "./overChildTwo.scss";
 
 const OverChildTwo = () => {
@@ -5,10 +6,7 @@ const OverChildTwo = () => {
     <div className="child_2">
       <div className="video">
         <video controls>
-          <source
-            src="https://rambody-trainer.azureedge.net/assets/en/animation.mp4#t=0.1"
-            type="video/mp4"
-          />
+          <source src={animationVideo} type="video/mp4" />
         </video>
         <div className="img"></div>
       </div>

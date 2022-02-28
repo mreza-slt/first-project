@@ -6,6 +6,10 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
+import img_1 from "../../assets/images/screenshot1.gif";
+import img_2 from "../../assets/images/screenshot2.jpg";
+import img_3 from "../../assets/images/screenshot3.gif";
+import img_4 from "../../assets/images/screenshot4.jpg";
 import "./animateSlide.scss";
 
 const AnimationSlider = () => {
@@ -35,25 +39,25 @@ const AnimationSlider = () => {
       id: 0,
       h1: "Animated exercises",
       p: "There are more than 1,500 training exercises exist inRambody, and as a trainer, I will design and send you aspecial workout plan by choosing from these exercises. Notethat these plans havent been prepared in advance and I willdesign and submit the plan based on your needs and after thespecified time.",
-      src: "https://rambody-trainer.azureedge.net/assets/common/screenshots/screenshot1.gif",
+      src: img_1,
     },
     {
       id: 1,
       h1: "Muscles involved",
       p: "  In the sent workout plan, I specify which of your musclesare involved during each exercise. With this feature, youcan focus on the target muscle while doing.",
-      src: "https://rambody-trainer.azureedge.net/assets/common/screenshots/screenshot2.jpg",
+      src: img_2,
     },
     {
       id: 2,
       h1: "Workout plan without equipment",
       p: "If you indicate to me that you do not have equipment available, according to the variety of exercises, I will design a special plan without the need for any equipment and with the help of your body weight.",
-      src: "https://rambody-trainer.azureedge.net/assets/common/screenshots/screenshot3.gif",
+      src: img_3,
     },
     {
       id: 3,
       h1: "Progress chart",
       p: "By entering your weight and size, see the changes on the chart, and base on the chart and the speed of your changes and by analyze your physical condition, I can change your plan to reach your goal faster and better.",
-      src: "https://rambody-trainer.azureedge.net/assets/common/screenshots/screenshot4.jpg",
+      src: img_4,
     },
   ];
 
@@ -69,12 +73,7 @@ const AnimationSlider = () => {
         <div className="animate_content">
           <div className="contentSlide">
             <div className={className}>
-              <Typography
-                variant="h4"
-                fontWeight={500}
-                fontSize={"2rem"}
-                className=""
-              >
+              <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
                 {text.h1}
               </Typography>
               <Typography mt={3} variant="subtitle2">

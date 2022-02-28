@@ -1,7 +1,11 @@
 import { createTheme } from "@mui/material/styles";
+import { useState } from "react";
 
-const CustomTheme = createTheme({
-  direction: "rtl",
-});
+const [direction, setDirection] = useState("ltr");
 
-export default CustomTheme;
+const handleSwitch = () => {
+  setDirection(direction === "ltr" ? "rtl" : "ltr");
+};
+
+const theme = createTheme({ direction });
+document.body.dir = direction;

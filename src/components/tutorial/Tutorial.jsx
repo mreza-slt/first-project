@@ -7,14 +7,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import AlertTutorial from "../../common/alertTutorial/AlertDialogTutorial";
 import AnimateStart from "../../common/animateScroll";
 import "./tutorial.scss";
+import bg_img from "../../assets/images/texture.55db9915.png";
+import img_1 from "../../assets/images/request_a_plan.jpg";
+import img_2 from "../../assets/images/client_profile.jpg";
+import img_3 from "../../assets/images/create_workout.jpg";
+import video_1 from "../../assets/videos/request_a_plan.mp4";
+import video_2 from "../../assets/videos/client_profile.mp4";
+import video_3 from "../../assets/videos/create_workout.mp4";
 
 const Tutorial = () => {
   const tutorial = [
     {
-      src: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/request_a_plan.jpg",
+      src: img_1,
       h3: "1. How to request a pakage",
-      video:
-        "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/request_a_plan.mp4#t=0.1",
+      video: video_1,
       descr: [
         "In this section, I will show you how to request a package via the Rambody application.",
         "1. After installing the application, search for my ID (mehdiSherafat) in the search page",
@@ -29,20 +35,18 @@ const Tutorial = () => {
     },
 
     {
-      src: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/client_profile.jpg",
+      src: img_2,
       h3: "2. Your profile in the trainer application",
-      video:
-        "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/client_profile.mp4#t=0.1",
+      video: video_2,
       desc: "In this video, you can see what information is displayed to me in trainer's application.Based on this information, I can design a plan suitable for your physical condition and main goal.As you can see in the video, I will have full access to your physical analysis and all the body images you might have uploaded. It is suggested to upload body images from three different angles which will help me to know your body shape and better design a plan for you.Note: You can choose not to upload photos without showing your face.",
       logo: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/client_profile.png",
       id: 2,
     },
 
     {
-      src: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/create_workout.jpg",
+      src: img_3,
       h3: "3. How your trainer designs a custom workout",
-      video:
-        "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/create_workout.mp4#t=0.1",
+      video: video_3,
       desc: "As described in the previous section, I will review your profile and main goal and starts the planning for you.I will choose the right exercises for you from the hundreds of training exercises that exist in the Rambody exercises collection.For each exercise, I will provide more details such as sessions, the number of sets, the execution time, and the training systems.This process will take time. That is the reason I can not immediately send a plan to you. Make sure to request your next plan a few days before the end of the current plan.",
 
       logo: "https://rambody-trainer.azureedge.net/assets/common/tutorial-videos/create_workout.png",
@@ -86,11 +90,7 @@ const Tutorial = () => {
       </div>
       <div>
         <div className="slider">
-          <img
-            className="img_1"
-            src="https://rambody-trainer.azureedge.net/static/media/texture.55db9915.png"
-            alt=""
-          />
+          <img className="img_1" src={bg_img} alt="" />
           <Swiper
             grabCursor={true}
             watchSlidesProgress={true}

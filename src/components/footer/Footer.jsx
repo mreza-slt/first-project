@@ -2,6 +2,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Typography } from "@mui/material";
 import "./footer.scss";
+import footer_img from "../../assets/images/logo-rambody-text-white.c792b75a.png";
 
 const Footer = () => {
   return (
@@ -9,10 +10,7 @@ const Footer = () => {
       <div className="footer">
         <div className="footer_content">
           <div className="content">
-            <img
-              src="https://rambody-trainer.azureedge.net/static/media/logo-rambody-text-white.c792b75a.png"
-              alt=""
-            />
+            <img src={footer_img} alt="" />
             <Typography
               variant="subtitle2"
               fontSize={".85rem"}

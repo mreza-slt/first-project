@@ -1,5 +1,7 @@
 import { Box, LinearProgress } from "@mui/material";
+import img from "../../assets/images/logo-rambody.6f2da0b2.png";
 import "./loading.scss";
+
 const Loading = () => {
   return (
     <div className="loading">
@@ -7,10 +9,7 @@ const Loading = () => {
         <LinearProgress />
       </Box>
       <div className="logo">
-        <img
-          src="https://rambody-trainer.azureedge.net/static/media/logo-rambody.6f2da0b2.png"
-          alt=""
-        />
+        <img SRC={img} alt="" />
       </div>
     </div>
   );

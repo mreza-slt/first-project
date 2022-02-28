@@ -1,41 +1,41 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
+import { Typography } from "@mui/material";
+import { useState } from "react";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-// import required modules
-import { Autoplay, EffectCoverflow, Pagination } from "swiper";
-import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import img_1 from "../../assets/images/default-plan.c991dc08.jpg";
+import img_2 from "../../assets/images/texture.55db9915.png";
 import AlertDialog from "../../common/alertDialog-pakage/AlertDialog";
 import AnimateStart from "../../common/animateScroll";
-import { Typography } from "@mui/material";
 import "./pakage.scss";
 
 const MyPakage = () => {
   const pakages = [
     {
       id: 1,
-      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
+      src: img_1,
       price: "100,000 T",
       h1: "fitness",
       p: "vip 6weeks",
     },
     {
       id: 2,
-      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
+      src: img_1,
       price: "300,000 T",
       h1: "برنامه غذایی",
       p: "رژیم غذایی",
     },
     {
       id: 3,
-      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
+      src: img_1,
       price: "100,000 T",
       h1: "تمرینی",
       p: "تمرین با وزنه و هوازی",
     },
     {
       id: 4,
-      src: "https://rambody-trainer.azureedge.net/static/media/default-plan.c991dc08.jpg",
+      src: img_1,
       price: "100 T",
       h1: "تخصصی بدنسازی",
       p: "برنامه تخصصی",
@@ -83,11 +83,7 @@ const MyPakage = () => {
         </section>
 
         <div className="parent_slide">
-          <img
-            className="img_bg"
-            src="https://rambody-trainer.azureedge.net/static/media/texture.55db9915.png"
-            alt="backgground_img"
-          />
+          <img className="img_bg" src={img_2} alt="backgground_img" />
 
           <Swiper
             effect={"coverflow"}

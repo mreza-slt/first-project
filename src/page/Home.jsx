@@ -8,11 +8,11 @@ import Footer from "../components/footer/Footer";
 import { useState } from "react";
 import Loading from "../common/loading/Loading";
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 5000);
+  // setTimeout(() => {
+  //   setLoading(false);
+  // }, 5000);
 
   return (
     <div className="h-screen" style={{ background: "#fff" }}>
