@@ -7,7 +7,7 @@ import Tutorial from "../components/tutorial/Tutorial";
 import Footer from "../components/footer/Footer";
 import { useState } from "react";
 import Loading from "../common/loading/Loading";
-const Home = () => {
+const Home = ({ setDirection }) => {
   const [loading, setLoading] = useState(false);
 
   // setTimeout(() => {
@@ -20,7 +20,7 @@ const Home = () => {
         <Loading />
       ) : (
         <>
-          <Header />
+          <Header setDirection={setDirection} />
           <OverView />
           <AnimationSlider />
           <MyPakage />

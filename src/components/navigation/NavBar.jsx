@@ -1,11 +1,11 @@
 import { Language } from "@mui/icons-material";
 import { Button, Menu, MenuItem, useMediaQuery } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import i18next from "i18next";
 import cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import nav_img from "../../assets/images/download.png";
 import nav_img_sm from "../../assets/images/logo-rambody-white.818c0b64.png";
-import "./navBar.scss";
 
 // language lists
 const languages = [
@@ -28,7 +28,7 @@ const languages = [
   },
 ];
 
-const NavBar = () => {
+const NavBar = ({ setDirection }) => {
   // get media query
   const media = useMediaQuery("(max-width:960px)");
 
@@ -39,7 +39,7 @@ const NavBar = () => {
 
   // change {dir} Due to the language
   useEffect(() => {
-    document.body.dir = currentLanguage.dir || "ltr";
+    setDirection(currentLanguage.dir || "ltr");
   }, [currentLanguage]);
 
   // Drawer component function
@@ -53,26 +53,61 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  // styles css -------------------------
+  const useStyles = makeStyles({
+    navbar: {
+      display: "flex",
+      maxWidth: media ? "960px" : "100%",
+      height: media ? "4rem" : "6rem",
+      justifyContent: "space-between",
+      padding: media ? "0 1.5rem" : "2rem",
+      alignItems: " center",
+    },
+    img_sm: media
+      ? {
+          display: "inline",
+          width: "40px",
+          height: "40px",
+        }
+      : {
+          display: "none",
+        },
+    img_md: media && {
+      display: "none",
+    },
+  });
+  const classes = useStyles();
+
   return (
-    <nav className="navbar">
-      <div className="img_md">
+    <nav className={classes.navbar}>
+      <div className={classes.img_md}>
         <img src={nav_img} alt="logo" />
       </div>
-      <div className="img_sm">
+      <div className={classes.img_sm}>
         <img src={nav_img_sm} />
       </div>
       <div>
         <div>
           <Button
             variant="outlined"
-            className="myBtn"
+            sx={
+              media && {
+                padding: "5px 15px 5px 12px",
+                color: "#fff",
+                borderColor: "#fff",
+                "&:hover": { borderColor: "#fff" },
+              }
+            }
             id="demo-positioned-button"
             aria-controls={open ? "demo-positioned-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <Language color="primary" className="p-0.5 mr-1 icon" />
+            <Language
+              color={media ? "#fff" : "primary"}
+              className="p-0.5 mr-1"
+            />
             {media ? currentLanguage.code : currentLanguage.name}
           </Button>
           <Menu
