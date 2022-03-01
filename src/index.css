@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 
+/* swiper pagination styles */
+.swiper-pagination span {
+    background: #000;
+    margin-right: 0.3rem;
+    padding: 0.3rem;
+    border: 3px solid #000;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.swiper-pagination span::after {
+    content: "";
+    background: transparent;
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: -12%;
+    left: -11%;
+    width: 12px;
+    height: 12px;
+}
+
 /* tailWind.css */
 @tailwind base;
 @tailwind components;

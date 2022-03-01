@@ -35,6 +35,7 @@ const NavBar = ({ setDirection }) => {
   // use of cookies pakage for get code from cookies
   const currentLanguageCode = cookies.get("i18next") || "en";
 
+  // find currnt language
   const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
 
   // change {dir} Due to the language
@@ -76,6 +77,7 @@ const NavBar = ({ setDirection }) => {
       display: "none",
     },
   });
+
   const classes = useStyles();
 
   return (
@@ -91,12 +93,14 @@ const NavBar = ({ setDirection }) => {
           <Button
             variant="outlined"
             sx={
-              media && {
-                padding: "5px 15px 5px 12px",
-                color: "#fff",
-                borderColor: "#fff",
-                "&:hover": { borderColor: "#fff" },
-              }
+              media
+                ? {
+                    padding: "5px 15px 5px 12px",
+                    color: "#fff",
+                    borderColor: "#fff",
+                    "&:hover": { borderColor: "#fff" },
+                  }
+                : {}
             }
             id="demo-positioned-button"
             aria-controls={open ? "demo-positioned-menu" : undefined}

@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
@@ -9,6 +9,7 @@ import img_2 from "../../assets/images/texture.55db9915.png";
 import AlertDialog from "../../common/alertDialog-pakage/AlertDialog";
 import AnimateStart from "../../common/animateScroll";
 import "./pakage.scss";
+import PakageStyles from "./styles";
 
 const MyPakage = () => {
   const pakages = [
@@ -42,6 +43,7 @@ const MyPakage = () => {
     },
   ];
 
+  // state for alertDialog
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
 
@@ -50,18 +52,27 @@ const MyPakage = () => {
     setData(data);
   };
 
+  // start animation when scroll
   const { ref, scroll } = AnimateStart();
+
+  const lgQuery = useMediaQuery("(max-width:960px)");
+  // styles-------------------------
+  const useStyles = PakageStyles();
+
+  const classes = useStyles();
 
   return (
     <main className="my_pakage text-center">
-      <div className="pakage_content">
-        <section ref={ref} className="content py-8">
+      <div className={classes.pakage_content}>
+        <section ref={ref} className={`py-8 ${classes.content}`}>
           <Typography
             variant="h4"
-            fontWeight={500}
-            className={`h1 ${
-              scroll ? "animate__animated animate__fadeInDown" : ""
-            }`}
+            sx={{
+              fontWeight: "500",
+              mb: lgQuery ? "1rem" : "1.5rem",
+              fontSize: lgQuery && "1.5rem",
+            }}
+            className={scroll ? "animate__animated animate__fadeInDown" : ""}
           >
             My packages
           </Typography>
@@ -82,8 +93,8 @@ const MyPakage = () => {
           </Typography>
         </section>
 
-        <div className="parent_slide">
-          <img className="img_bg" src={img_2} alt="backgground_img" />
+        <div className={classes.parent_slide}>
+          <img className={classes.img_bg} src={img_2} alt="backgground_img" />
 
           <Swiper
             effect={"coverflow"}
@@ -106,7 +117,8 @@ const MyPakage = () => {
               disableOnInteraction: true,
             }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
-            className="swiper"
+            style={{ direction: "rtl" }}
+            className={`swiper ${classes.swiper}`}
           >
             {pakages.map((p) => (
               <SwiperSlide
@@ -115,8 +127,8 @@ const MyPakage = () => {
                 className="img"
               >
                 <img src={p.src} />
-                <span className="span">{p.price}</span>
-                <div>
+                <span className={classes.span}>{p.price}</span>
+                <div className={classes.img_content}>
                   <Typography variant="h5" fontWeight={500}>
                     {p.h1}
                   </Typography>

@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { forwardRef } from "react";
+import { useParams } from "react-router-dom";
 import "./alertPakage.scss";
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -14,6 +15,8 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 const AlertDialog = ({ open, data, setOpen }) => {
+  const params = useParams();
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -57,7 +60,7 @@ const AlertDialog = ({ open, data, setOpen }) => {
                   </p>
                   <p>
                     STEP 2
-                    <span>Search for my ID (mehdiSherafat) in the app</span>
+                    <span>Search for my ID ({params.name}) in the app</span>
                   </p>
                   <p>
                     STEP 3

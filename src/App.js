@@ -14,8 +14,6 @@ const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 const App = () => {
   const [direction, setDirection] = useState("");
 
-  console.log(direction);
-
   const customTheme = createTheme({ direction });
   document.body.dir = direction;
 

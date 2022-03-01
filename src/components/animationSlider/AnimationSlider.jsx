@@ -10,7 +10,7 @@ import img_1 from "../../assets/images/screenshot1.gif";
 import img_2 from "../../assets/images/screenshot2.jpg";
 import img_3 from "../../assets/images/screenshot3.gif";
 import img_4 from "../../assets/images/screenshot4.jpg";
-import "./animateSlide.scss";
+import StyleAnimation from "./styles";
 
 const AnimationSlider = () => {
   const slideRef = useRef(null);
@@ -66,12 +66,16 @@ const AnimationSlider = () => {
     setText(item);
     setClassName("animate__animated animate__fadeIn animate__slow");
   };
+  // styles
+  const useStyles = StyleAnimation();
+
+  const classes = useStyles();
 
   return (
-    <main className="animation_slider">
+    <main className={classes.animation_slider}>
       <div>
-        <div className="animate_content">
-          <div className="contentSlide">
+        <div className={classes.animate_content}>
+          <div className={classes.contentSlide}>
             <div className={className}>
               <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
                 {text.h1}
@@ -80,11 +84,9 @@ const AnimationSlider = () => {
                 {text.p}
               </Typography>
             </div>
-
-            <div ref={slideRef} className="pagination"></div>
           </div>
 
-          <div className="imageSlider">
+          <div className={classes.imageSlider}>
             <div>
               <Swiper
                 grabCursor={true}
@@ -102,17 +104,43 @@ const AnimationSlider = () => {
                 loop={true}
                 modules={[Autoplay, Thumbs, Pagination]}
                 className="mySwiper"
+                style={{ padding: "0.5rem 0", direction: "rtl" }}
               >
                 {content.map((c) => (
-                  <SwiperSlide key={c.id} id={c.id}>
+                  <SwiperSlide
+                    className={classes.swiper_slide}
+                    key={c.id}
+                    id={c.id}
+                  >
                     <div>
-                      <img className="img" src={c.src} alt="animate_img" />
+                      <img
+                        className={classes.img}
+                        src={c.src}
+                        alt="animate_img"
+                      />
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
+            <div
+              style={{
+                display: media && "none",
+                position: "absolute",
+                left: 0,
+                top: 0,
+                width: " 15px",
+                height: "100%",
+                background: "#fff",
+                boxShadow: "6px 0px 15px 0px #fff",
+                zIndex: "10",
+              }}
+            ></div>
           </div>
+          <div
+            ref={slideRef}
+            className={`swiper-pagination ${classes.pagination}`}
+          ></div>
         </div>
       </div>
     </main>
