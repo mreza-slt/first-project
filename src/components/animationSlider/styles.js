@@ -37,6 +37,17 @@ const StyleAnimation = () => {
       background: "#fff",
       paddingLeft: lgQuery && 0,
     },
+    after_imageSlider: {
+      display: lgQuery && "none",
+      position: "absolute",
+      left: 0,
+      top: 0,
+      width: " 15px",
+      height: "100%",
+      background: "#fff",
+      boxShadow: "6px 0px 15px 0px #fff",
+      zIndex: "10",
+    },
     swiper_slide: {
       padding: smQuery ? "0 0.75rem" : "0 1.5rem",
       maxHeight: "280px",

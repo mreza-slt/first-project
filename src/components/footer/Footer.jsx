@@ -1,60 +1,84 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Typography } from "@mui/material";
-import "./footer.scss";
+import { useTranslation } from "react-i18next";
 import footer_img from "../../assets/images/logo-rambody-text-white.c792b75a.png";
+import FooterStyles from "./styles";
 
 const Footer = () => {
+  // get website text translations
+  const { t } = useTranslation();
+
+  const useStyles = FooterStyles();
+
+  const classes = useStyles();
+
   return (
-    <div className="footer_parent">
-      <div className="footer">
-        <div className="footer_content">
-          <div className="content">
-            <img src={footer_img} alt="" />
+    <div className={classes.footer_parent}>
+      <div className={classes.footer}>
+        <div className={classes.footer_content}>
+          <div className={classes.content}>
+            <img className={classes.img} src={footer_img} alt="" />
             <Typography
               variant="subtitle2"
               fontSize={".85rem"}
               fontWeight={450}
               className="opacity-70"
             >
-              Rambody is a communication platform between trainers and trainees
-              to provide a dedicated training and nutrition plan.
+              {t("footer.title")}
             </Typography>
           </div>
         </div>
-        <div className="links">
-          <div>
-            <a href="https://www.rambody.ca/">www.Rambody.com</a>
-            <a href="info@rambody.com">info@rambody.com</a>
+        <div className={classes.links}>
+          <div className="text-blue-600/100">
+            <a className="block mt-4" href="https://www.rambody.ca/">
+              www.Rambody.com
+            </a>
+            <a className="block mt-4" href="info@rambody.com">
+              info@rambody.com
+            </a>
           </div>
 
           <div>
-            <a href="https://www.rambody.ca/faq">FAQ</a>
-            <a href="https://www.rambody.ca/blog/categories/englishblogs">
-              Blog
+            <a
+              className="block mt-4 underline text-white opacity-70 text-sm"
+              href="https://www.rambody.ca/faq"
+            >
+              {t("footer.link_1")}
+            </a>
+            <a
+              className="block mt-4 underline text-white opacity-70 text-sm"
+              href="https://www.rambody.ca/blog/categories/englishblogs"
+            >
+              {t("footer.link_2")}
             </a>
           </div>
         </div>
       </div>
-      <div className="footer_2_parent">
-        <div className="footer_2">
-          <div className="content">
+      <div className={classes.footer_2_parent}>
+        <div className={classes.footer_2}>
+          <div className={classes.content}>
             <Typography
               variant="subtitle2"
               fontSize={".85rem"}
               fontWeight={400}
               className="opacity-70"
             >
-              All rights reserved 2019. Farosa Technologies Inc. Farosa
-              Technologies Inc
+              {t("footer.caption")}
             </Typography>
           </div>
-          <div className="icons">
+          <div className="flex items-center mb-4 mx-auto">
             <a href="https://www.instagram.com/accounts/login/?next=/rambody.app/">
-              <InstagramIcon className="icon" fontSize="small" />
+              <InstagramIcon
+                className={classes.icon}
+                sx={{ width: "27px", height: "27px" }}
+              />
             </a>
             <a href="https://twitter.com/RambodyApp/">
-              <TwitterIcon className="icon" fontSize="small" />
+              <TwitterIcon
+                className={classes.icon}
+                sx={{ width: "27px", height: "27px" }}
+              />
             </a>
           </div>
         </div>

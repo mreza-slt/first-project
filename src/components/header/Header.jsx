@@ -5,8 +5,12 @@ import NavBar from "../navigation/NavBar";
 import img_1 from "../../assets/images/pexels-photo-841130.jpeg";
 import img_2 from "../../assets/images/texture.55db9915.png";
 import HeaderStyle from "./headerStyle";
+import { useTranslation } from "react-i18next";
 
 const Header = ({ setDirection }) => {
+  // get website text translations
+  const { t } = useTranslation();
+
   const params = useParams();
 
   // start animation when scroll
@@ -52,7 +56,7 @@ const Header = ({ setDirection }) => {
             }}
             variant="contained"
           >
-            Open app
+            {t("header_button")}
           </Button>
         </div>
 

@@ -50,8 +50,8 @@ const NavBar = ({ setDirection }) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (code) => {
-    i18next.changeLanguage(code);
     setAnchorEl(null);
+    i18next.changeLanguage(code);
   };
 
   // styles css -------------------------
@@ -75,6 +75,9 @@ const NavBar = ({ setDirection }) => {
         },
     img_md: media && {
       display: "none",
+    },
+    meno: {
+      width: "10rem",
     },
   });
 
@@ -108,10 +111,9 @@ const NavBar = ({ setDirection }) => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <Language
-              color={media ? "#fff" : "primary"}
-              className="p-0.5 mr-1"
-            />
+            <span
+              className={`mx-2 flag-icon flag-icon-${currentLanguage.country_code}`}
+            ></span>
             {media ? currentLanguage.code : currentLanguage.name}
           </Button>
           <Menu
@@ -120,6 +122,7 @@ const NavBar = ({ setDirection }) => {
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
+            className={classes.meno}
           >
             {languages.map(({ code, name, country_code }) => (
               <div key={country_code}>
@@ -127,9 +130,9 @@ const NavBar = ({ setDirection }) => {
                   className={code === currentLanguageCode ? "font-bold" : ""}
                   onClick={() => handleClose(code)}
                 >
-                  {/* <span
+                  <span
                     className={`flag-icon flag-icon-${country_code}`}
-                  ></span> */}
+                  ></span>
                   {media ? code : name}
                 </MenuItem>
               </div>

@@ -53,6 +53,10 @@ const TutorialStyles = () => {
       background: "#fff",
       borderRadius: "12px",
     },
+    text: {
+      textAlign: "left",
+      paddingLeft: "1rem",
+    },
     button: {
       position: "absolute",
       bottom: "12px",

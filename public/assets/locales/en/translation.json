@@ -1,4 +1,6 @@
 {
+  "header_button": "Open App",
+  "alert_action": "CLOSE",
   "overView": {
     "Title_1": "My Expertise",
     "Title_2": "My overview",
@@ -18,7 +20,23 @@
   },
   "myPakage": {
     "title": "My packages",
-    "body": "You can see the list of my packages that I can design in this section. Note that these packages have not been prepared in advance and are designed based on your physical conditions and goal. You can also contact me via the chat button in my profile after installing the Rambody application."
+    "body": "You can see the list of my packages that I can design in this section. Note that these packages have not been prepared in advance and are designed based on your physical conditions and goal. You can also contact me via the chat button in my profile after installing the Rambody application.",
+    "slide": {
+      "title": "HOW DO I APPLY FOR A PACKAGE?",
+      "p": {
+        "1": "STEP 1",
+        "2": "STEP 2",
+        "3": "STEP 3",
+        "4": "STEP 4"
+      },
+      "span": {
+        "1": "Download Rambody applicatio",
+        "2_1": "Search for my ID ",
+        "2_2": " in the app",
+        "3": "Apply for one based on your needs and goals",
+        "4": "Design and submit the application within the specified time"
+      }
+    }
   },
   "download": "Download Application",
   "tutorial": {
@@ -27,35 +45,15 @@
     "action": "CLOSE",
     "slide_1": {
       "title": "1. How to request a pakage",
-      "descr": {
-        "item": "In this section, I will show you how to request a package via the Rambody application.",
-        "item1": "1. After installing the application, search for my ID (mehdiSherafat) in the search page",
-        "item2": "2. Enter my profile. Read the description of the package and choose the one that fits your needs and goal.Plans are not pre-designed. I will design a custom plan based on your physical condition and goal.",
-        "item3": "3. Pay for your selected package fee using your my payment method. You can see my payment method by clicking the ‘Request Package’ button.",
-        "item4": "4. Once you have paid for the package go to the app and click on the 'I paid' button to complete the request.",
-        "item5": "5. On the next page, enter the payment information or upload your receipt then request the package.",
-        "item6": "6. You will receive an initial notification when I approved and started to prepare your plan. I needs some time to prepare a custom plan for you. Once I completed the plan you will receive another notification that your plan is ready to use."
-      }
+      "descr": "In this section, I will show you how to request a package via the Rambody application.\n1. After installing the application, search for my ID (mehdiSherafat) in the search page \n 2. Enter my profile. Read the description of the package and choose the one that fits your needs and goal.Plans are not pre-designed. I will design a custom plan based on your physical condition and goal. \n3. Pay for your selected package fee using your my payment method. You can see my payment method by clicking the ‘Request Package’ button. \n4. Once you have paid for the package go to the app and click on the 'I paid' button to complete the request. \n5. On the next page, enter the payment information or upload your receipt then request the package. \n6. You will receive an initial notification when I approved and started to prepare your plan. I needs some time to prepare a custom plan for you. Once I completed the plan you will receive another notification that your plan is ready to use."
     },
     "slide_2": {
       "title": "2. Your profile in the trainer application",
-      "descr": [
-        "In this video, you can see what information is displayed to me in trainer's application.",
-        "Based on this information, I can design a plan suitable for your physical condition and main goal.",
-        "As you can see in the video, I will have full access to your physical analysis and all the body images you might have uploaded.",
-        "It is suggested to upload body images from three different angles which will help me to know your body shape and better design a plan for you.",
-        "Note: You can choose not to upload photos without showing your face."
-      ]
+      "descr": "In this video, you can see what information is displayed to me in trainer's application.\nBased on this information, I can design a plan suitable for your physical condition and main goal.\nAs you can see in the video, I will have full access to your physical analysis and all the body images you might have uploaded.\nIt is suggested to upload body images from three different angles which will help me to know your body shape and better design a plan for you.\nNote: You can choose not to upload photos without showing your face."
     },
     "slide_3": {
       "title": "3. How your trainer designs a custom workout",
-      "descr": [
-        "As described in the previous section, I will review your profile and main goal and starts the planning for you.",
-        "I will choose the right exercises for you from the hundreds of training exercises that exist in the Rambody exercises collection.",
-        "For each exercise, I will provide more details such as sessions, the number of sets, the execution time, and the training systems.",
-        "This process will take time.",
-        "That is the reason I can not immediately send a plan to you. Make sure to request your next plan a few days before the end of the current plan."
-      ]
+      "descr": "As described in the previous section, I will review your profile and main goal and starts the planning for you.\nI will choose the right exercises for you from the hundreds of training exercises that exist in the Rambody exercises collection.\nFor each exercise, I will provide more details such as sessions, the number of sets, the execution time, and the training systems.\nThis process will take time.\nThat is the reason I can not immediately send a plan to you. Make sure to request your next plan a few days before the end of the current plan."
     }
   },
   "footer": {

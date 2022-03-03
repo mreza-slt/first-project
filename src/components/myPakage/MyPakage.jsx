@@ -1,5 +1,6 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -12,6 +13,9 @@ import "./pakage.scss";
 import PakageStyles from "./styles";
 
 const MyPakage = () => {
+  // get website text translations
+  const { t } = useTranslation();
+
   const pakages = [
     {
       id: 1,
@@ -74,7 +78,7 @@ const MyPakage = () => {
             }}
             className={scroll ? "animate__animated animate__fadeInDown" : ""}
           >
-            My packages
+            {t("myPakage.title")}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -85,11 +89,7 @@ const MyPakage = () => {
                 : ""
             }
           >
-            You can see the list of my packages that I can design in this
-            section. Note that these packages have not been prepared in advance
-            and are designed based on your physical conditions and goal. You can
-            also contact me via the chat button in my profile after installing
-            the Rambody application.
+            {t("myPakage.body")}
           </Typography>
         </section>
 
@@ -117,7 +117,8 @@ const MyPakage = () => {
               disableOnInteraction: true,
             }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
-            style={{ direction: "rtl" }}
+            dir={document.body.dir === "ltr" ? "ltr" : "rtl"}
+            key={document.body.dir === "ltr" ? "ltr" : "rtl"}
             className={`swiper ${classes.swiper}`}
           >
             {pakages.map((p) => (

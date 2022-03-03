@@ -1,11 +1,15 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useTranslation } from "react-i18next";
 import appStore_img from "../../assets/images/app-store.9ebdc2c9.png";
 import googlePlay_img from "../../assets/images/download (1).png";
 import logo from "../../assets/images/logo-rambody.6f2da0b2.png";
 import AnimateStart from "../../common/animateScroll";
 
 const GetApp = () => {
+  // get website text translations
+  const { t } = useTranslation();
+
   const { ref, scroll } = AnimateStart();
 
   const smQuery = useMediaQuery("(max-width:600px)");
@@ -58,7 +62,7 @@ const GetApp = () => {
             fontSize={smQuery && "1.5rem"}
             className={scroll ? "animate__backInLeft animate__animated" : ""}
           >
-            Download Application
+            {t("download")}
           </Typography>
           <div className={classes.img}>
             <a href="https://play.google.com/store/apps/details?id=co.rambody">

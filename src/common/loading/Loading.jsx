@@ -9,7 +9,7 @@ const Loading = () => {
         <LinearProgress />
       </Box>
       <div className="logo">
-        <img SRC={img} alt="" />
+        <img src={img} alt="" />
       </div>
     </div>
   );

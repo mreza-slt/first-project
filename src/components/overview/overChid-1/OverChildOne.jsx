@@ -1,6 +1,7 @@
 import CircleIcon from "@mui/icons-material/Circle";
 import { ListItemButton, Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useTranslation } from "react-i18next";
 import AnimateStart from "../../../common/animateScroll";
 
 const OverChildOne = () => {
@@ -10,6 +11,9 @@ const OverChildOne = () => {
   // get media query
   const mdQuery = useMediaQuery("(max-width:1280px)");
   const smQuery = useMediaQuery("(max-width:600px)");
+
+  // get website text translations
+  const { t } = useTranslation();
 
   // styles-----------------------------------
   const useStyles = makeStyles({
@@ -39,7 +43,7 @@ const OverChildOne = () => {
     <div className={classes.child_1}>
       <div className={classes.section_1}>
         <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
-          My Expertise
+          {t("overView.Title_1")}
         </Typography>
         <ul
           ref={ref}
@@ -52,21 +56,23 @@ const OverChildOne = () => {
           <ListItemButton sx={{ padding: "0.5rem 0" }}>
             <CircleIcon color="primary" sx={{ fontSize: 10 }} />
             <Typography className="pl-1 ">
-              <span className="font-bold">Bodybuilding</span> (Expert)
+              <span className="font-bold"> {t("overView.li_1")}</span> (
+              {t("overView.li_sm")})
             </Typography>
           </ListItemButton>
 
           <ListItemButton sx={{ padding: "0.5rem 0" }}>
             <CircleIcon color="primary" sx={{ fontSize: 10 }} />
             <Typography className="pl-1 ">
-              <span className="font-bold">Croosfit</span> (Expert)
+              <span className="font-bold"> {t("overView.li_1")}</span> (
+              {t("overView.li_sm")})
             </Typography>
           </ListItemButton>
         </ul>
       </div>
       <div className={classes.section_2}>
         <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
-          My overview
+          {t("overView.Title_2")}
         </Typography>
       </div>
     </div>
