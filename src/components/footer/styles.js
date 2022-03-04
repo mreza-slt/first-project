@@ -58,13 +58,12 @@ const FooterStyles = () => {
     icon: {
       background: "#bbc2cb",
       color: "#5b6065",
-
       marginLeft: "0.2rem",
       padding: "0.2rem",
       borderRadius: "50%",
-      transition: "all 0.3s",
 
       "&:hover": {
+        transition: "all 0.3s",
         background: "#2f3d49",
         color: "#000",
       },

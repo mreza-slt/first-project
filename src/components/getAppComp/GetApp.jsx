@@ -1,5 +1,6 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 import appStore_img from "../../assets/images/app-store.9ebdc2c9.png";
 import googlePlay_img from "../../assets/images/download (1).png";
@@ -10,6 +11,9 @@ const GetApp = () => {
   // get website text translations
   const { t } = useTranslation();
 
+  // get languageCode from cookies
+  const language = Cookies.get("i18next");
+
   const { ref, scroll } = AnimateStart();
 
   const smQuery = useMediaQuery("(max-width:600px)");
@@ -18,7 +22,7 @@ const GetApp = () => {
   const useStyles = makeStyles({
     getApp: {
       margin: "4rem auto 3rem auto",
-      maxWidth: "540px",
+      maxWidth: "680px",
       textAlign: "center",
     },
     logo: {
@@ -84,6 +88,20 @@ const GetApp = () => {
                 />
               </div>
             </a>
+            {language === "fa" && (
+              <a href="https://apps.apple.com/app/rambody/id1300350064">
+                <img
+                  className={classes.img_download}
+                  style={{
+                    width: "200px",
+                    height: "64px",
+                    borderRadius: "6px",
+                  }}
+                  src="https://rambody-trainer.azureedge.net/static/media/direct_android.5cf7b1aa.png"
+                  alt=""
+                />
+              </a>
+            )}
           </div>
         </div>
       </div>

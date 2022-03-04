@@ -56,6 +56,14 @@ const NavBar = ({ setDirection }) => {
 
   // styles css -------------------------
   const useStyles = makeStyles({
+    root: {
+      "& .MuiPaper-root": {
+        maxWidth: media ? "70px" : "104px",
+        marginTop: "-36px !important",
+        marginLeft: media ? "5.6px !important" : "11px !important",
+        marginRight: media ? "-6.3px !important" : "-0.3px !important",
+      },
+    },
     navbar: {
       display: "flex",
       maxWidth: media ? "960px" : "100%",
@@ -75,9 +83,6 @@ const NavBar = ({ setDirection }) => {
         },
     img_md: media && {
       display: "none",
-    },
-    meno: {
-      width: "10rem",
     },
   });
 
@@ -117,21 +122,22 @@ const NavBar = ({ setDirection }) => {
             {media ? currentLanguage.code : currentLanguage.name}
           </Button>
           <Menu
+            className={classes.root}
             id="demo-positioned-menu"
             aria-labelledby="demo-positioned-button"
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
-            className={classes.meno}
           >
             {languages.map(({ code, name, country_code }) => (
               <div key={country_code}>
                 <MenuItem
+                  sx={{ margin: "0 -9px" }}
                   className={code === currentLanguageCode ? "font-bold" : ""}
                   onClick={() => handleClose(code)}
                 >
                   <span
-                    className={`flag-icon flag-icon-${country_code}`}
+                    className={`flag-icon px-4 flag-icon-${country_code}`}
                   ></span>
                   {media ? code : name}
                 </MenuItem>

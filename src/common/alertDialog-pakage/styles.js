@@ -22,7 +22,7 @@ const AlertPakageStyles = () => {
       flexBasis: lgQuery ? "97.5%" : "50%",
       width: lgQuery ? "100%" : "50%",
       height: lgQuery ? "9rem" : "370px",
-      padding: "0.7rem 0 0 0",
+      padding: "0.9rem 0 0 0",
       position: "relative",
       textAlign: "center",
       borderRadius: "5px",
@@ -35,7 +35,7 @@ const AlertPakageStyles = () => {
     img_content: {
       position: "absolute",
       width: "100%",
-      top: "11px",
+      top: "14px",
       height: "100%",
       borderRadius: "5px",
       opacity: "0.5",
@@ -59,15 +59,8 @@ const AlertPakageStyles = () => {
     },
     p: {
       flexShrink: 0,
-      flexGrow: 0,
       fontWeight: "bold",
       paddingRight: "1rem",
-    },
-    span: {
-      fontWeight: "bold",
-      flexGrow: 1,
-      fontSize: " 0.9rem",
-      opacity: "0.5",
     },
     download: {
       display: "flex",

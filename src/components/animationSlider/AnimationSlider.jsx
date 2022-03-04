@@ -17,11 +17,9 @@ const AnimationSlider = () => {
   // get website text translations
   const { t } = useTranslation();
 
-  const slideRef = useRef(null);
-
   const media = useMediaQuery("(max-width:960px)");
 
-  const [ref, setRef] = useState(null);
+  // animation text
   const [text, setText] = useState({
     id: 0,
     h1: "Animated exercises",
@@ -29,12 +27,18 @@ const AnimationSlider = () => {
     src: "https://rambody-trainer.azureedge.net/assets/common/screenshots/screenshot1.gif",
   });
 
-  const [className, setClassName] = useState("");
-  useEffect(() => {
-    setTimeout(() => {
-      setClassName("");
-    }, 1000);
-  }, [text]);
+  // const [className, setClassName] = useState("");
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setClassName("");
+  //   }, 1000);
+  // }, [text]);
+
+  // get ref swiper slide
+  const slideRef = useRef(null);
+
+  // get index from state for set text
+  const [ref, setRef] = useState(null);
 
   useEffect(() => {
     if (slideRef) setRef(slideRef.current);
@@ -70,7 +74,7 @@ const AnimationSlider = () => {
   const changeSlider = (data) => {
     const item = content.find((item) => item.id === data.realIndex);
     setText(item);
-    setClassName("animate__animated animate__fadeIn animate__slow");
+    // setClassName("animate__animated animate__fadeIn animate__slow");
   };
   // styles
   const useStyles = StyleAnimation();
@@ -82,8 +86,8 @@ const AnimationSlider = () => {
       <div>
         <div className={classes.animate_content}>
           <div className={classes.contentSlide}>
-            <div className={className}>
-              <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
+            <div className="animate__animated animate__fadeIn animate__slow">
+              <Typography variant="h5" fontWeight={500}>
                 {text.h1}
               </Typography>
               <Typography mt={3} variant="subtitle2">

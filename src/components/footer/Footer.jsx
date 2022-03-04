@@ -30,27 +30,27 @@ const Footer = () => {
           </div>
         </div>
         <div className={classes.links}>
-          <div className="text-blue-600/100">
+          <Typography color="primary" fontWeight={500}>
             <a className="block mt-4" href="https://www.rambody.ca/">
               www.Rambody.com
             </a>
             <a className="block mt-4" href="info@rambody.com">
               info@rambody.com
             </a>
-          </div>
+          </Typography>
 
           <div>
             <a
-              className="block mt-4 underline text-white opacity-70 text-sm"
+              className="block mt-4 underline text-white opacity-70"
               href="https://www.rambody.ca/faq"
             >
-              {t("footer.link_1")}
+              <Typography variant="subtitle2">{t("footer.link_1")}</Typography>
             </a>
             <a
-              className="block mt-4 underline text-white opacity-70 text-sm"
+              className="block mt-4 underline text-white opacity-70"
               href="https://www.rambody.ca/blog/categories/englishblogs"
             >
-              {t("footer.link_2")}
+              <Typography variant="subtitle2">{t("footer.link_2")}</Typography>
             </a>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Footer = () => {
             <Typography
               variant="subtitle2"
               fontSize={".85rem"}
-              fontWeight={400}
+              fontWeight={500}
               className="opacity-70"
             >
               {t("footer.caption")}

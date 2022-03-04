@@ -21,6 +21,7 @@ const AlertDialog = ({ open, data, setOpen }) => {
   // get website text translations
   const { t } = useTranslation();
 
+  // get languageCode from cookies
   const language = Cookies.get("i18next");
 
   // get name from query params
@@ -63,33 +64,57 @@ const AlertDialog = ({ open, data, setOpen }) => {
               <div>
                 <div className="flex justify-start items-baseline  mb-4 sm:mb-7">
                   <div className={classes.p}>{t("myPakage.slide.p.1")}</div>
-                  <div className={classes.span}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: " 0.9rem",
+                      opacity: "0.5",
+                    }}
+                  >
                     {t("myPakage.slide.span.1")}
-                  </div>
+                  </Typography>
                 </div>
                 <div className="flex justify-start items-baseline  mb-4 sm:mb-7">
                   <div className={classes.p}>{t("myPakage.slide.p.2")}</div>
-                  <div className={classes.span}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: " 0.9rem",
+                      opacity: "0.5",
+                    }}
+                  >
                     {t("myPakage.slide.span.2_1")}({params.name})
                     {t("myPakage.slide.span.2_2")}
-                  </div>
+                  </Typography>
                 </div>
                 <div className="flex justify-start items-baseline  mb-4 sm:mb-7">
                   <div className={classes.p}>{t("myPakage.slide.p.3")}</div>
-                  <div className={classes.span}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: " 0.9rem",
+                      opacity: "0.5",
+                    }}
+                  >
                     {t("myPakage.slide.span.3")}
-                  </div>
+                  </Typography>
                 </div>
                 <div className="flex justify-start items-baseline  mb-4 sm:mb-7">
                   <div className={classes.p}>{t("myPakage.slide.p.4")}</div>
-                  <div className={classes.span}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: " 0.9rem",
+                      opacity: "0.5",
+                    }}
+                  >
                     {t("myPakage.slide.span.4")}
-                  </div>
+                  </Typography>
                 </div>
               </div>
 
               <div
-                className={`flex justify-center items-center mt-16 mx-auto ${
+                className={`flex justify-center items-center mt-14 mx-auto ${
                   smQuery && "flex-col"
                 }`}
               >

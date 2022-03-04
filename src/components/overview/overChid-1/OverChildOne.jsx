@@ -42,7 +42,7 @@ const OverChildOne = () => {
   return (
     <div className={classes.child_1}>
       <div className={classes.section_1}>
-        <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
+        <Typography variant="h4" fontWeight={500} fontSize={"1.8rem"}>
           {t("overView.Title_1")}
         </Typography>
         <ul
@@ -64,14 +64,14 @@ const OverChildOne = () => {
           <ListItemButton sx={{ padding: "0.5rem 0" }}>
             <CircleIcon color="primary" sx={{ fontSize: 10 }} />
             <Typography className="pl-1 ">
-              <span className="font-bold"> {t("overView.li_1")}</span> (
+              <span className="font-bold"> {t("overView.li_2")}</span> (
               {t("overView.li_sm")})
             </Typography>
           </ListItemButton>
         </ul>
       </div>
       <div className={classes.section_2}>
-        <Typography variant="h4" fontWeight={500} fontSize={"2rem"}>
+        <Typography variant="h4" fontWeight={500} fontSize={"1.8rem"}>
           {t("overView.Title_2")}
         </Typography>
       </div>

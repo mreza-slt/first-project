@@ -130,7 +130,7 @@ const MyPakage = () => {
                 <img src={p.src} />
                 <span className={classes.span}>{p.price}</span>
                 <div className={classes.img_content}>
-                  <Typography variant="h5" fontWeight={500}>
+                  <Typography variant="h6" fontWeight={500}>
                     {p.h1}
                   </Typography>
                   <Typography variant="subtitle" fontWeight={500}>

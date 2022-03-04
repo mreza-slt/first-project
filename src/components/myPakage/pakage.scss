@@ -4,7 +4,7 @@
   width: 100%;
 
   .swiper {
-    .swiper-slide::after {
+    &-slide::after {
       content: "";
       position: absolute;
       display: block;
@@ -16,11 +16,11 @@
       top: 0;
       left: 0;
     }
-    .swiper-slide-active {
+    &-slide-active {
       box-shadow: 0px 0px 9px 9px #d5dde3;
       border-radius: 10px;
     }
-    .swiper-slide-active::after {
+    &-slide-active::after {
       content: "";
       position: absolute;
       display: block;
